@@ -1,11 +1,47 @@
 body {
 	background:white;
+	font-family: Raleway;
 }
 
-#content {
-	background-color: blue;
-	width: 98%;
+#main-content {
+	//background-color: blue;
+	width: 80%;
 	//margin: 2% 0.5% 2% 0.5%;
 	margin:0 auto;
-	
 }
+
+.block {
+	margin-bottom:1rem;
+}
+
+.heading {
+	background:#9300ff;
+	border-bottom:1px solid grey;
+		h1 {
+			padding: 1rem 0 1rem 0.5rem;
+			font-size: 1.8rem;
+			margin:0;
+			color:white;
+		}
+}
+
+.heading:hover {
+	cursor:pointer;
+}
+
+.inner-text {
+	background:white;
+	border: 1px solid grey;
+	//margin-bottom:5px;
+	padding:1rem;
+		p {
+			margin:0;
+		}
+}
+
+.link {
+	text-decoration: none;
+}
+
+
+

@@ -3,30 +3,75 @@ body {
   font-family: Raleway; }
 
 #main-content {
-  width: 80%;
   margin: 0 auto; }
 
 .block {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  display: table;
+  width: 100%; }
 
 .heading {
-  background: #9300ff;
-  border-bottom: 1px solid grey; }
+  float: left;
+  width: 100%;
+  background-color: #9e38b0;
+  border-bottom: 0.25rem solid #6f277d;
+  display: table;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
   .heading h1 {
     padding: 1rem 0 1rem 0.5rem;
     font-size: 1.8rem;
     margin: 0;
     color: white; }
 
-.heading:hover {
+.headingOpen {
+  background-color: #6844b7;
+  border-bottom: 0.25rem solid #4c3185; }
+
+.header {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+  float: left; }
+
+.arrow {
+  width: 4rem;
+  float: right; }
+
+.rotated {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.arrow:hover {
   cursor: pointer; }
 
 .inner-text {
   background: white;
   border: 1px solid grey;
-  padding: 1rem; }
+  border-top: 0;
+  padding: 1.4rem 0.8rem;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
   .inner-text p {
     margin: 0; }
 
+.showText {
+  display: inline-block; }
+
+.hideText {
+  display: none; }
+
 .link {
   text-decoration: none; }
+
+/* Default styles first then media queries */
+@media screen and (max-width: 400px) {
+  #main-content {
+    width: 95%; } }
+
+@media screen and (min-width: 1400px) {
+  #main-content {
+    width: 95%; } }

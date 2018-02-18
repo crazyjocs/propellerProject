@@ -4,32 +4,64 @@ $( document ).ready(function() {
 		request.open('GET', 'http://design.propcom.co.uk/buildtest/accordion-data.json', true);
 
 		request.onload = function () {
-			// begin accessing JSON data here
+			// starting to access JSON file
 			var data = JSON.parse(this.response);
 
-
+			//runs through all records within JSON file until last one is reached
 			for (var i = 0; i < data.blocks.length; i++) {
-			var test = "text" + i;
-			var dataHolder = $('<div class="block"><div onclick="toggle_visibility(\'' + test + '\')" class="heading"><h1>' + data.blocks[i].heading + '</h1></div><div class="inner-text" id="text'+i+'"><p>' + data.blocks[i].content + '</p></div></div>');
+			var textID 		= "text" + i; //setting up ID for content show/hide on click
+			var arrowID 	= "arrow" + i; //setting up ID for arrow rotate on click
+			var headerID 	= "header" + i; //setting up ID for header color change on click
+
+			//setting up each record to be then appended to the html body (main-content div)
+			var dataHolder = $('<div class="block"><div id="'+headerID+'" class="heading"><div class="header"><h1>' + data.blocks[i].heading + '</h1></div><img src="images/arrow.png" alt="arrowImage" id="'+arrowID+'" class="arrow" onclick="toggle_visibility(\'' + textID +'\',\'' + arrowID +'\',\'' + headerID +'\')"></div><div class="inner-text" id="'+textID+'"><p>' + data.blocks[i].content + '</p></div></div>'); 
 								
-			$("#main-content").append(dataHolder);
+			//appending each record to main-content div
+			$("#main-content").append(dataHolder); 
+
+			//getting hold of the element that holds the content of each record
+			var divIDelement = document.getElementById(textID);
+			//getting hold of the arrow element
+			var arrowIDelement = document.getElementById(arrowID);
+			//getting hold of the header element
+			var headerIDelement = document.getElementById(headerID);
+
+			//using the for loop to set up first record as open and rest as closed
+			if (i === 0){
+				divIDelement.classList.add("showText");
+				arrowIDelement.classList.add("rotated");
+				headerIDelement.classList.add("headingOpen");
+			}
+			else
+				divIDelement.classList.add("hideText");	
 			}
 
-			console.log(data.blocks[0].content);
-			for (var i = 0; i < data.blocks.length; i++) {
-				console.log(data.blocks[i].heading);
-				console.log(data.blocks[i].content);
-			}
 		}
 
 		request.send();
 
 });
 
-function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display === 'block')
-          e.style.display = 'none';
+//setting up function for openning and clossing records
+function toggle_visibility(textid,arrowid,headerid) {
+       var textDiv = document.getElementById(textid);
+       var headerID = document.getElementById(headerid);
+
+       if(textDiv.classList.contains("showText")) {
+         textDiv.classList.remove("showText");
+			textDiv.classList.add("hideText");
+			headerID.classList.remove("headingOpen");
+		}
+       else if (textDiv.classList.contains("hideText")) {
+         textDiv.classList.remove("hideText");
+			textDiv.classList.add("showText");
+			headerID.classList.add("headingOpen");
+		}
+
+		var arrowIMG = document.getElementById(arrowid);
+		if(arrowIMG.classList.contains("rotated")) {
+         arrowIMG.classList.remove("rotated");
+		}
        else
-          e.style.display = 'block';
+			arrowIMG.classList.add("rotated");
     }

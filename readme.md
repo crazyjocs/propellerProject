@@ -1,9 +1,9 @@
 # Propeller Exercise
 
-Build an interactive accordion from ​scratch ​ based on 
-http://design.propcom.co.uk/buildtest/accordion-design.png.​   
+Build an interactive accordion from ​scratch ​ based on
+http://design.propcom.co.uk/buildtest/accordion-design.png .   
 Use the JSON endpoint found here: 
-http://design.propcom.co.uk/buildtest/accordion-data.json​ to dynamically 
+http://design.propcom.co.uk/buildtest/accordion-data.json to dynamically 
 populate the accordion. 
 
 ## Getting Started

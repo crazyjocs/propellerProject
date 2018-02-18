@@ -6,7 +6,7 @@ body {
   margin: 0 auto; }
 
 .block {
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
   display: table;
   width: 100%; }
 
@@ -49,7 +49,7 @@ body {
 
 .inner-text {
   background: white;
-  border: 1px solid grey;
+  border: 1px solid #ebebeb;
   border-top: 0;
   padding: 1.4rem 0.8rem;
   width: 100%;
@@ -70,8 +70,20 @@ body {
 /* Default styles first then media queries */
 @media screen and (max-width: 400px) {
   #main-content {
-    width: 95%; } }
+    margin: 0.6rem; } }
+
+@media screen and (min-width: 400px) {
+  #main-content {
+    margin: 0.8rem; } }
+
+@media screen and (min-width: 600px) {
+  #main-content {
+    margin: 1rem; } }
+
+@media screen and (min-width: 1000px) {
+  #main-content {
+    margin: 1.2rem; } }
 
 @media screen and (min-width: 1400px) {
   #main-content {
-    width: 95%; } }
+    margin: 1.4rem; } }

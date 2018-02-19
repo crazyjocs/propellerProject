@@ -14,7 +14,7 @@ $( document ).ready(function() {
 			var headerID 	= "header" + i; //setting up ID for header color change on click
 
 			//setting up each record to be then appended to the html body (main-content div)
-			var dataHolder = $('<div class="block"><div id="'+headerID+'" class="heading"><div class="header"><h1>' + data.blocks[i].heading + '</h1></div><img src="images/arrow.png" alt="arrowImage" id="'+arrowID+'" class="arrow" onclick="toggle_visibility(\'' + textID +'\',\'' + arrowID +'\',\'' + headerID +'\')"></div><div class="inner-text" id="'+textID+'"><p>' + data.blocks[i].content + '</p></div></div>'); 
+			var dataHolder = $('<div class="block"><div id="'+headerID+'" class="heading" onclick="toggle_visibility(\'' + textID +'\',\'' + arrowID +'\',\'' + headerID +'\')"><div class="header"><h1>' + data.blocks[i].heading + '</h1></div><img src="images/arrow.png" alt="arrowImage" id="'+arrowID+'" class="arrow"></div><div class="inner-text" id="'+textID+'"><p>' + data.blocks[i].content + '</p></div></div>'); 
 								
 			//appending each record to main-content div
 			$("#main-content").append(dataHolder); 

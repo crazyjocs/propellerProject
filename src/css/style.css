@@ -29,6 +29,12 @@ body {
   background-color: #6844b7;
   border-bottom: 0.25rem solid #4c3185; }
 
+.heading:hover {
+  border-bottom: 0.25rem solid #4c3185; }
+
+.headingOpen:hover {
+  border-bottom: 0.25rem solid #6f277d; }
+
 .header {
   display: table-cell;
   vertical-align: middle;
@@ -44,7 +50,7 @@ body {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
 
-.arrow:hover {
+.heading:hover {
   cursor: pointer; }
 
 .inner-text {
@@ -63,9 +69,6 @@ body {
 
 .hideText {
   display: none; }
-
-.link {
-  text-decoration: none; }
 
 /* Default styles first then media queries */
 @media screen and (max-width: 400px) {

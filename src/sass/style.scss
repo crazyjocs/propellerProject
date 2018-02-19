@@ -34,6 +34,14 @@ body {
 	border-bottom:0.25rem solid #4c3185;
 }
 
+.heading:hover {
+	border-bottom:0.25rem solid #4c3185;
+}
+
+.headingOpen:hover {
+	border-bottom:0.25rem solid #6f277d;
+}
+
 .header {
 	display: table-cell;
     vertical-align: middle;
@@ -48,7 +56,7 @@ body {
 }
 
 .rotated {
-	-webkit-transform:rotate(180deg);
+	-webkit-transform: rotate(180deg);
   	-moz-transform: rotate(180deg);
   	-ms-transform: rotate(180deg);
   	-o-transform: rotate(180deg);
@@ -56,9 +64,10 @@ body {
 }
 
 
-.arrow:hover {
+.heading:hover {
 	cursor:pointer;
 }
+
 .inner-text {
 	background:white;
 	border: 1px solid #ebebeb;
@@ -82,9 +91,7 @@ body {
 	display:none;
 }
 
-.link {
-	text-decoration: none;
-}
+
 
 /* Default styles first then media queries */
 @media screen and (max-width: 400px)  {
